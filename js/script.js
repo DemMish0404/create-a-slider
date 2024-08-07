@@ -132,12 +132,14 @@ function displaySlides(sliderData){
    if(viewportWidth > 576){ // если пк разрешение экрана
       sliderData.slides.forEach((elem,index)=>{
          const clone = createClone(slideTemplate,elem, false)
+         
          parentContainer.appendChild(clone);
       })
    }else{ 
       // если мобильное разрешение экрана
       sliderData.slides.forEach((elem,index)=>{
          const clone = createClone(slideTemplate,elem, true) // получаем готового клона
+         
          parentContainer.appendChild(clone);
       })
    }
@@ -149,14 +151,14 @@ function displaySlides(sliderData){
 function createClone( template, slideInfo,isItMobile = false){
    const clone = document.importNode(template.content, true); // создаем клон с образца
    if(isItMobile === true){
-      
+    clone.querySelector('.slide-card').classList.add('slide_mobile')
       clone.querySelector('.slide-card__img').src = slideInfo.image_orientation_map.mobile?.thumbnails[0]?.path
       clone.querySelector('.slide-card__img').alt = 'альтернативный текст для картинки'
       clone.querySelector('.slide-card__title').textContent = 'заголовок для слайда'
       clone.querySelector('.slide-card__text').textContent = 'текст для слайда'
       return clone
    } else{ 
-
+      clone.querySelector('.slide-card').classList.add('slide_desktop')
       clone.querySelector('.slide-card__img').src = slideInfo.image_orientation_map.desktop?.thumbnails[0]?.path
       clone.querySelector('.slide-card__img').alt = 'альтернативный текст для картинки если у товара нет картинки'
       clone.querySelector('.slide-card__title').textContent = 'заголовок для слайда'
@@ -166,6 +168,8 @@ function createClone( template, slideInfo,isItMobile = false){
 
    
 }
+
+
 
 // функция по отображению слайдов на странице
 displaySlides(sliderData)
