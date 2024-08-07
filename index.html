@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  
+
+  
+  <title>свайпер со слайдами по разрешению экрана</title>
+<!--* подключаем свайпер -->
+  <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+<!--* подключаем свайпер END-->
+
+<link rel="stylesheet" href="./css/style.css">
+<script src="./js/script.js" defer></script>
+</head>
+<body>
+   <div class="wrapper">
+      <header class="header">header</header>
+      <main class="main">
+
+         <!-- Slider main container -->
+         <div class="swiper" >
+            <!-- Additional required wrapper -->
+            <div class="swiper-wrapper" id="first-swiper-slider-container">
+            <!-- Slides -->
+
+            <!--! образец слайда <div class="swiper-slide slide-card">
+               <img class="slide-card__img" src="./sliders/home/ps4slim.webp" alt="картинка описание карточки ">
+               <h3 class="slide-card__title">описание карточки</h3>
+               <div class="slide-card__text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quisquam perspiciatis itaque eveniet cum deserunt! Molestiae, et praesentium ad cupiditate, dolore deserunt similique qui unde debitis, natus iure ut totam illo?</div>
+            </div> -->
+            
+            
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+         
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+         
+            <!-- If we need scrollbar -->
+            <div class="swiper-scrollbar"></div>
+         </div>
+      </main>
+      <footer class="footer">footer</footer>
+
+
+
+      <template id="slider-card-template" >
+         <div class="swiper-slide slide-card">
+            <img class="slide-card__img" src="" alt="">
+            <h3 class="slide-card__title"></h3>
+            <div class="slide-card__text"></div>
+         </div>
+      </template>
+
+   </div>
+</body>
+</html>
